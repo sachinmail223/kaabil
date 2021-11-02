@@ -50,8 +50,8 @@ function App() {
 
             <Switch>
               <ProtectedLogin path="/login" component={LoginPage} />
-
               <ProtectedRoute path="/post" component={JobPostPage} />
+              <ProtectedHome path="/"component={JobPostPage}/>
             </Switch>
           </Router>
         </AuthApi.Provider>
@@ -67,6 +67,16 @@ const ProtectedRoute = ({ component: Component, ...rest }) => {
     <Route
       {...rest}
       render={() => (context.auth ? <Component /> : <Redirect to="/login" />)}
+    />
+  );
+};
+const ProtectedHome = ({ component: Component, ...rest }) => {
+  const context = useContext(AuthApi);
+
+  return (
+    <Route
+      {...rest}
+      render={() => (context.auth ? <Redirect to="/post" /> : <Redirect to="/login" />)}
     />
   );
 };

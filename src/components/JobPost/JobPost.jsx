@@ -32,18 +32,7 @@ const JobPost = () => {
       "work_days":work_days ,
       "work_start_time":work_start_time,
       "work_end_time":work_end_time
-      // "title": "Clerk",
-      // "schedule_type": "part-time",
-      // "active": true,
-      // "shift_type": "day",
-      // "allow_wfh": true,
-      // "min_salary": 0,
-      // "max_salary": 0,
-      // "experience_type": "experienced",
-      // "open_count": 0,
-      // "work_days": "fw==",
-      // "work_start_time": 0,
-      // "work_end_time": 0
+      
     };
     console.log(inputBody);
     const config = {
@@ -72,7 +61,7 @@ const JobPost = () => {
               <h5 className="modal-title">Post Jobs</h5>
             </div>
             <div className="modal-body ">
-              <div className="mb-1">
+              <div className="mb-1 mt-2">
                 <input
                   type="text"
                   name="title"
@@ -122,7 +111,7 @@ const JobPost = () => {
   <label for="html">Freshere</label>
               
               </div>
-              <div className="mb-1">
+              <div className="">
                 <input
                   type="number"
                   name="open_count"
@@ -176,7 +165,7 @@ const JobPost = () => {
   <label for="html">Night</label>
               
             </div>
-            <div className=" pt-4  d-flex justify-content-center">
+            <div className=" pt-2  d-flex justify-content-center">
               <button
                 type="button"
                 className="btn btn-success mx-auto w-50"

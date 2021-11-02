@@ -7,7 +7,7 @@ const LoginLeft = () => {
  
 
   return (
-  <div className={`col-4 h-100  mt-5 ${styles.postedJobs}`} >
+  <div className={`col-4 h-100  mt-4 ${styles.postedJobs}`} >
    
    <div className="row d-flex h-100 overflow-auto justify-content-center pt-5 ">
      

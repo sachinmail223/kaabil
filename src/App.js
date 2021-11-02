@@ -43,7 +43,7 @@ function App() {
   }, [])
   return (
     <div className="App">
-      <div className="container vh-100 pt-5">
+      <div className="container vh-100 pt-3">
         <AuthApi.Provider value={{ auth, setAuth, postedJobs }}>
           <Router>
             <Navbar />

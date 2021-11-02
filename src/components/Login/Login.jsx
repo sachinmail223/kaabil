@@ -31,7 +31,7 @@ const   loginHandeler = ()=>{
 }
   return (
     
-    <div className="col-7 d-flex justify-content-center align-items-center p-5  h-100 bg-light mt-5">
+    <div className="col-7 d-flex justify-content-center align-items-center p-5  h-100 bg-light mt-3">
       
       {/* <!-- Login Form --> */}
       <form action="" className={`w-100 h-100  d-flex justify-content-center align-items-center ${styles.form}`}>

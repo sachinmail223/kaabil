@@ -50,7 +50,7 @@ const JobPost = () => {
       }); 
   };
   return (
-    <div className="col-7 d-flex justify-content-center align-items-center p-5  h-100 bg-light mt-5">
+    <div className="col-7 d-flex justify-content-center align-items-center p-3  h-100 bg-light mt-4">
         {/* <!-- Login Form --> */}
         <form
           action=""
@@ -165,7 +165,7 @@ const JobPost = () => {
   <label for="html">Night</label>
               
             </div>
-            <div className=" pt-2  d-flex justify-content-center">
+            <div className="   d-flex justify-content-center">
               <button
                 type="button"
                 className="btn btn-success mx-auto w-50"

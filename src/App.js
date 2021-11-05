@@ -19,6 +19,8 @@ import axios from 'axios'
 function App() {
   const [auth, setAuth] = useState(false);
   const [postedJobs, setPostedJobs] = useState()
+  const [allpost, setAllpost] = useState()
+
   const readCookie = ()=>{
     const user =Cookies.get("user")
     if(user){
@@ -40,14 +42,15 @@ function App() {
       });
 
     readCookie()
-  }, [])
+    console.log(allpost)
+  }, [allpost])
+  
   return (
     <div className="App">
       <div className="container vh-100 pt-3">
-        <AuthApi.Provider value={{ auth, setAuth, postedJobs }}>
+        <AuthApi.Provider value={{ auth, setAuth, postedJobs,setAllpost }}>
           <Router>
             <Navbar />
-
             <Switch>
               <ProtectedLogin path="/login" component={LoginPage} />
               <ProtectedRoute path="/post" component={JobPostPage} />

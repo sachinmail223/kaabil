@@ -1,22 +1,24 @@
 import React from "react";
-import { useState } from "react";
+import {useContext, useState } from "react";
 import styles from "./JobPost.module.css"
 import axios from 'axios'
-
+import AuthApi from "../../AuthApi";
 
 const JobPost = () => {
+  const context = useContext(AuthApi);
+
   const [title, settitle] = useState("");
   const [schedule_type, setschedule_type] = useState("");
   const [active, setactive] = useState(true);
   const [shift_type, setshift_type] = useState("");
   const [allow_wfh, setallow_wfh] = useState(true);
-  const [min_salary, setmin_salary] = useState(+0);
-  const [max_salary, setmax_salary] = useState(+0);
+  const [min_salary, setmin_salary] = useState("");
+  const [max_salary, setmax_salary] = useState("");
   const [experience_type, setexperience_type] = useState("");
-  const [open_count, setopen_count] = useState(+0);
+  const [open_count, setopen_count] = useState("");
   const [work_days, setwork_days] = useState("fw==");
-  const [work_start_time, setwork_start_time] = useState(+0);
-  const [work_end_time, setwork_end_time] = useState(+0);
+  const [work_start_time, setwork_start_time] = useState("");
+  const [work_end_time, setwork_end_time] = useState("");
 
   const postHandeler = () => {
     const inputBody = {
@@ -48,6 +50,21 @@ const JobPost = () => {
         console.log(response.data);
 
       }); 
+      settitle("")
+      setschedule_type("")
+      setactive(true)
+      setshift_type("")
+      setallow_wfh(true)
+      setmin_salary("")
+      setmax_salary("")
+      setexperience_type("")
+      setopen_count("")
+      setwork_days("")
+      setwork_start_time("")
+      setwork_end_time("")
+      context.setAllpost(1)
+      
+
   };
   return (
     <div className="col-7 d-flex justify-content-center align-items-center p-3  h-100 bg-light mt-4">
@@ -71,6 +88,8 @@ const JobPost = () => {
                   onChange={(e) => {
                     settitle(e.target.value);
                   }}
+                  value={title}
+
                 />
               </div>
               <div className="mb-1">
@@ -90,6 +109,8 @@ const JobPost = () => {
                   onChange={(e) => {
                     setmin_salary(+e.target.value);
                   }}
+                  value={min_salary}
+
                 />
               </div>
 
@@ -102,7 +123,10 @@ const JobPost = () => {
                   placeholder="Enter Max salary"
                   onChange={(e) => {
                     setmax_salary(+e.target.value);
+
                   }}
+                  value={max_salary}
+
                 />
               </div>
                <input type="radio" id="setexperience_type" name="experience_type" value="experienced" onClick={(e)=>{setexperience_type(e.target.value)}}/>
@@ -120,7 +144,10 @@ const JobPost = () => {
                   placeholder="Totle Opening"
                   onChange={(e) => {
                     setopen_count(+e.target.value);
+
                   }}
+                  value={open_count}
+
                 />
               </div>
               {/* <div className="mb-1">
@@ -145,6 +172,8 @@ const JobPost = () => {
                   onChange={(e) => {
                     setwork_start_time(+e.target.value);
                   }}
+                  value={work_start_time}
+
                 />
               </div>
               <div className="mb-1">
@@ -157,6 +186,8 @@ const JobPost = () => {
                   onChange={(e) => {
                     setwork_end_time(+e.target.value);
                   }}
+                  value={work_end_time}
+
                 />
               </div>
               <input type="radio" id="shift_type" name="shift_type" value="day" onClick={(e)=>{setshift_type(e.target.value)}}/>

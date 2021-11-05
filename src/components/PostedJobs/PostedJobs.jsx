@@ -1,8 +1,12 @@
 import styles from "./PostedJobs.module.css";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import AuthApi from "../../AuthApi";
 const PostedJobs = () => {
+  
   const context = useContext(AuthApi);
+  useEffect(() => {
+   
+  }, [context.allpost])
 
   return (
     <div className={`col-4 h-100  mt-4 pt-2 pb-2 ${styles.postedJobs}`}>

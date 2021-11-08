@@ -42,7 +42,8 @@ const JobPost = () => {
         'Content-Type':'application/json',
         'Accept':'application/json'
       },
-      withCredentials: true}
+      withCredentials: true
+    }
     
     axios
       .post("https://kbl.thatwebsite.xyz/api/v1/job",inputBody,config)
@@ -150,18 +151,7 @@ const JobPost = () => {
 
                 />
               </div>
-              {/* <div className="mb-1">
-                <input
-                  type="text"
-                  name="work_days"
-                  className="form-control"
-                  id="work_days"
-                  placeholder="Work_days"
-                  onChange={(e) => {
-                    setwork_days(e.target.value);
-                  }}
-                />
-              </div> */}
+              
               <div className="mb-1">
                 <input
                   type="number"
